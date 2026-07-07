@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小栗方情緒冒險世界平台 · 產品體驗回饋問卷</title>
+<style>
+  :root{
+    --cream:#f8f7f4; --ink:#2b2926; --sub:#6b6863;
+    --dark:#232220; --accent:#f97316; --accent-dark:#ea580c;
+    --card:#ffffff; --border:#eae7e1; --new:#fb923c;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Noto Sans TC","Segoe UI",sans-serif;line-height:1.7;}
+  .page{max-width:720px;margin:0 auto;padding:32px 20px 80px;}
+  .hero{background:var(--dark);color:#fff;border-radius:28px;
+    padding:44px 32px;text-align:center;margin-bottom:20px;}
+  .pill{display:inline-block;background:rgba(249,115,22,.18);color:#fdba74;
+    padding:6px 16px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:16px;}
+  .hero h1{font-size:26px;margin:0 0 12px;}
+  .hero-sub{color:#d1cfc9;font-size:14px;white-space:pre-line;margin:0;}
+  .notice{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
+    border-radius:16px;padding:16px 20px;font-size:13.5px;margin-bottom:20px;white-space:pre-line;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:20px;
+    padding:26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.03);}
+  .id-options{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
+  .id-option{flex:1;min-width:140px;border:2px solid var(--border);border-radius:16px;padding:18px;
+    text-align:center;font-weight:600;cursor:pointer;transition:.15s;}
+  .id-option:hover{border-color:var(--accent);}
+  .id-option.active{border-color:var(--accent);background:#fff7ed;color:var(--accent-dark);}
+  .section{display:none;}
+  .section.active{display:block;}
+  .section-badge{display:inline-block;background:var(--dark);color:#fff;font-size:12px;
+    font-weight:600;padding:5px 14px;border-radius:999px;margin-bottom:16px;}
+  .q{margin-bottom:26px;}
+  .q:last-child{margin-bottom:0;}
+  .q-title{font-weight:700;font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+  .q-desc{color:var(--sub);font-size:12.5px;margin-bottom:10px;white-space:pre-line;}
+  .tag-new{background:var(--new);color:#fff;font-size:11px;font-weight:700;
+    padding:2px 9px;border-radius:999px;}
+  input[type=text],textarea{width:100%;border:1.5px solid var(--border);border-radius:12px;
+    padding:11px 14px;font-family:inherit;font-size:14px;background:#fdfdfc;}
+  textarea{min-height:80px;resize:vertical;}
+  .opt-row{display:flex;align-items:center;gap:10px;border:1.5px solid var(--border);
+    border-radius:12px;padding:10px 14px;margin-bottom:8px;cursor:pointer;transition:.15s;}
+  .opt-row:hover{border-color:var(--accent);}
+  .opt-row.checked{border-color:var(--accent);background:#fff7ed;}
+  .opt-row input{accent-color:var(--accent);}
+  .other-input{margin-top:8px;margin-left:26px;display:none;}
+  .other-input.show{display:block;}
+  .scale-row{display:flex;justify-content:space-between;gap:8px;margin-top:6px;}
+  .scale-item{flex:1;text-align:center;}
+  .scale-item label{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;}
+  .scale-circle{width:38px;height:38px;border-radius:50%;border:2px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--sub);transition:.15s;}
+  .scale-item input{display:none;}
+  .scale-item input:checked + .scale-circle{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .scale-caption{display:flex;justify-content:space-between;font-size:11.5px;color:var(--sub);margin-top:8px;}
+  .submit-btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:16px;
+    padding:16px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:.15s;}
+  .submit-btn:hover{background:var(--accent-dark);}
+  .foot-note{text-align:center;color:var(--sub);font-size:12px;margin-top:14px;}
+  .preview-note{background:#f1f5f9;border:1px solid #cbd5e1;color:#475569;border-radius:16px;
+    padding:16px 20px;font-size:13px;margin-top:8px;}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <span class="pill">小栗方情緒冒險世界平台</span>
+    <h1>產品體驗回饋問卷</h1>
+    <p class="hero-sub">您好！感謝您參與「小栗方情緒冒險世界平台」的產品體驗問卷。
+
+我們預計於 7/9、7/10 進行產品 Demo，本次預計收集 10 份問卷作為首波優化依據。您的寶貴意見將協助我們持續調整，打造最懂親師生需求的「情緒陪伴好夥伴」。</p>
+  </header>
+
+  <div class="card id-card">
+    <div class="q-title">請問您的填答身分是？</div>
+    <div class="id-options">
+      <div class="id-option" data-role="parent">👨‍👩‍👧 家長</div>
+      <div class="id-option" data-role="teacher">🏫 教師 / 輔導老師</div>
+      <div class="id-option" data-role="student">🧒 學生</div>
+    </div>
+  </div>
+
+  <section id="parent-section" class="section">
+    <div class="card">
+      <div class="section-badge">家長端 · 10 題</div>
+
+      <div class="q">
+        <div class="q-title">1. 請問您的居住地區與目前職業是？</div>
+        <div class="q-desc">範例：台北市信義區 / 金融業經理</div>
+        <input type="text" name="entry.1123830930">
+      </div>
+
+      <div class="q">
+        <div class="q-title">2. 您的孩子目前就讀的小學年級為？</div>
+        <div class="opts" data-name="entry.1684239513" data-type="radio">
+          <div class="opt-row">
+    <input type="radio" name="entry.1684239513" value="低年級 (一、二年級)">
+    <span>低年級 (一、二年級)</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1684239513" value="中年級 (三、四年級)">
+    <span>中年級 (三、四年級)</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1684239513" value="高年級 (五、六年級)">
+    <span>高年級 (五、六年級)</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">3. 您平常主要透過哪些日常表現來察覺孩子的情緒起伏？</div>
+        <textarea name="entry.1453479065"></textarea>
+      </div>
+
+      <div class="q">
+        <div class="q-title">4. 整體而言，您認為自己目前引導孩子面對與處理負面情緒的成效如何？</div>
+        <div class="scale-row"><div class="scale-item">
+      <label>
+        <input type="radio" name="entry.1237621343" value="1">
+        <span class="scale-circle">1</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="entry.1237621343" value="2">
+        <span class="scale-circle">2</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="entry.1237621343" value="3">
+        <span class="scale-circle">3</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="entry.1237621343" value="4">
+        <span class="scale-circle">4</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="entry.1237621343" value="5">
+        <span class="scale-circle">5</span>
+      </label>
+    </div></div>
+  <div class="scale-caption"><span>亟需協助</span><span>非常順手</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">5. 如果系統提供「情緒儀表板」搭配「Linebot 機器人訊息推播更新」功能，您認為這是否能讓您更清楚、即時地掌握孩子的心情變化？</div>
+        <div class="opts" data-name="entry.1014967071" data-type="radio">
+          <div class="opt-row">
+    <input type="radio" name="entry.1014967071" value="非常有幫助，能更清楚且直覺地掌握狀況">
+    <span>非常有幫助，能更清楚且直覺地掌握狀況</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1014967071" value="有幫助，但希望推播的頻率與時間可以自訂">
+    <span>有幫助，但希望推播的頻率與時間可以自訂</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1014967071" value="普通，主要還是習慣登入系統看完整圖表">
+    <span>普通，主要還是習慣登入系統看完整圖表</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1014967071" value="沒有幫助 / 不需要推播">
+    <span>沒有幫助 / 不需要推播</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">6. 承上題，您最希望在 Linebot 訊息推播中，收到哪些特定情緒警示或成長摘要？（可複選）</div>
+        <div class="opts">
+          <div class="opt-row">
+    <input type="checkbox" name="linebot_opt" value="孩子情緒低落或需要關懷時的即時提醒">
+    <span>孩子情緒低落或需要關懷時的即時提醒</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="linebot_opt" value="孩子與同學發生人際衝突的通知">
+    <span>孩子與同學發生人際衝突的通知</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="linebot_opt" value="孩子情緒明顯進步的正向回饋">
+    <span>孩子情緒明顯進步的正向回饋</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="linebot_opt" value="每週情緒趨勢摘要（如：情緒起伏圖表）">
+    <span>每週情緒趨勢摘要（如：情緒起伏圖表）</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="linebot_opt" value="孩子主動完成情緒紀錄的通知">
+    <span>孩子主動完成情緒紀錄的通知</span>
+  </div>
+          <div class="opt-row is-other">
+      <input type="checkbox" name="linebot_opt" value="__other__" class="other-toggle">
+      <span>其他：</span>
+    </div>
+    <input type="text" class="other-input" placeholder="請輸入其他項目">
+        </div>
+        <input type="hidden" name="entry.2091226019" class="linebot-hidden">
+      </div>
+
+      <div class="q">
+        <div class="q-title">7. 身為家長，您最期待這位「情緒陪伴好夥伴」能幫孩子解決哪些在學校或人際關係上不敢對父母說的痛點？</div>
+        <textarea name="entry.361785011"></textarea>
+      </div>
+
+      <div class="q">
+        <div class="q-title">8. 如果產品正式推出，您願意每週花多少時間陪孩子一起使用這套系統？</div>
+        <div class="opts" data-name="entry.359074951" data-type="radio">
+          <div class="opt-row">
+    <input type="radio" name="entry.359074951" value="30分鐘以內">
+    <span>30分鐘以內</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.359074951" value="30~60分鐘">
+    <span>30~60分鐘</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.359074951" value="60分鐘以上">
+    <span>60分鐘以上</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">9. 您對目前產品介面呈現的風格（如：溫暖卡片、吉祥物引導）有何初步想法？</div>
+        <textarea name="entry.395950592"></textarea>
+      </div>
+
+      <div class="q">
+        <div class="q-title">10. 我們若在平台內增加「小朋友心情溫度計」或「今日心情筆記本」等功能，對您在家庭教育引導上是否有幫助？請與我們分享您的看法。</div>
+        <div class="q-desc">【填答範例參考】
+- 很有幫助，心情溫度計很直覺，可以讓我知道孩子今天在學校有沒有受委屈。
+- 今日心情筆記本很棒，可以變成我們每天睡前的親子對話素材。</div>
+        <textarea name="entry.147467345"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section id="teacher-section" class="section">
+    <div class="card">
+      <div class="section-badge">教師端 · 8 題</div>
+
+      <div class="q">
+        <div class="q-title">請問您目前任教的地區與學校名稱是？</div>
+        <input type="text" name="entry.1852075183">
+      </div>
+
+      <div class="q">
+        <div class="q-title">1. 請問您目前的教育職稱是？</div>
+        <div class="opts" data-name="entry.1368436660" data-type="radio">
+          <div class="opt-row">
+    <input type="radio" name="entry.1368436660" value="班級導師">
+    <span>班級導師</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1368436660" value="科任教師">
+    <span>科任教師</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1368436660" value="專任 / 兼任輔導老師">
+    <span>專任 / 兼任輔導老師</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1368436660" value="代理 / 代課老師">
+    <span>代理 / 代課老師</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.1368436660" value="校長 / 行政主管">
+    <span>校長 / 行政主管</span>
+  </div>
+          <div class="opt-row is-other">
+      <input type="radio" name="entry.1368436660" value="__other__" class="other-toggle">
+      <span>其他：</span>
+    </div>
+    <input type="text" class="other-input" placeholder="請輸入其他答案" name="entry.1368436660_other">
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">2. 老師每堂課都在看著每位同學，但在日常班級管理中，您在「處理」學生的情緒起伏或人際衝突時，最感疲憊或耗時的痛點是什麼？</div>
+        <textarea name="entry.872517020"></textarea>
+      </div>
+
+      <div class="q">
+        <div class="q-title">3. 您認為「AI 協助老師觀察班級情緒」的需求程度？</div>
+        <div class="scale-row"><div class="scale-item">
+      <label>
+        <input type="radio" name="new_ai_need" value="1">
+        <span class="scale-circle">1</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_ai_need" value="2">
+        <span class="scale-circle">2</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_ai_need" value="3">
+        <span class="scale-circle">3</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_ai_need" value="4">
+        <span class="scale-circle">4</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_ai_need" value="5">
+        <span class="scale-circle">5</span>
+      </label>
+    </div></div>
+  <div class="scale-caption"><span>幫助不大</span><span>幫助很大，很有需求</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">4. 您認為「家長每週收到孩子情緒週報」的最有幫助的價值？</div>
+        <div class="scale-row"><div class="scale-item">
+      <label>
+        <input type="radio" name="new_report_value" value="1">
+        <span class="scale-circle">1</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_report_value" value="2">
+        <span class="scale-circle">2</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_report_value" value="3">
+        <span class="scale-circle">3</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_report_value" value="4">
+        <span class="scale-circle">4</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_report_value" value="5">
+        <span class="scale-circle">5</span>
+      </label>
+    </div></div>
+  <div class="scale-caption"><span>幫助不大</span><span>幫助很大，很有需求</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">5. 教師 Dashboard 是否有助於老師掌握班級情緒狀態？</div>
+        <div class="scale-row"><div class="scale-item">
+      <label>
+        <input type="radio" name="new_dashboard_help" value="1">
+        <span class="scale-circle">1</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_dashboard_help" value="2">
+        <span class="scale-circle">2</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_dashboard_help" value="3">
+        <span class="scale-circle">3</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_dashboard_help" value="4">
+        <span class="scale-circle">4</span>
+      </label>
+    </div><div class="scale-item">
+      <label>
+        <input type="radio" name="new_dashboard_help" value="5">
+        <span class="scale-circle">5</span>
+      </label>
+    </div></div>
+  <div class="scale-caption"><span>幫助不大</span><span>幫助很大，很有需求</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">6. 作為教學現場的管理者，您評估導入本平台時，在系統隱私與安全機制上最看重哪些項目？ (可複選)</div>
+        <div class="opts" data-name="entry.496279458" data-type="checkbox">
+          <div class="opt-row">
+    <input type="checkbox" name="entry.496279458" value="系統通過國家資安認證">
+    <span>系統通過國家資安認證</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="entry.496279458" value="由使用者決定是否保留或刪除資料">
+    <span>由使用者決定是否保留或刪除資料</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="entry.496279458" value="具備親師生權限分級管理機制">
+    <span>具備親師生權限分級管理機制</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="entry.496279458" value="數據傳輸過程完全加密">
+    <span>數據傳輸過程完全加密</span>
+  </div>
+          <div class="opt-row is-other">
+      <input type="checkbox" name="entry.496279458" value="__other__" class="other-toggle">
+      <span>其他：</span>
+    </div>
+    <input type="text" class="other-input" placeholder="請輸入其他答案" name="entry.496279458_other">
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">7. 您認為此平台最適合融入現行教學體制中的哪一類課程或時間？</div>
+        <div class="opts" data-name="entry.401901456" data-type="radio">
+          <div class="opt-row">
+    <input type="radio" name="entry.401901456" value="課程中關於情緒或人際等相關綜合活動">
+    <span>課程中關於情緒或人際等相關綜合活動</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.401901456" value="健康與體育等與之相關的課程">
+    <span>健康與體育等與之相關的課程</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.401901456" value="彈性學習課程或社團時間">
+    <span>彈性學習課程或社團時間</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="entry.401901456" value="每日早自習、班會或導師時間">
+    <span>每日早自習、班會或導師時間</span>
+  </div>
+          <div class="opt-row is-other">
+      <input type="radio" name="entry.401901456" value="__other__" class="other-toggle">
+      <span>其他：</span>
+    </div>
+    <input type="text" class="other-input" placeholder="請輸入其他答案" name="entry.401901456_other">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="student-section" class="section">
+    <div class="card">
+      <div class="section-badge">學生端 · 6 題</div>
+
+      <div class="q">
+        <div class="q-title">1. 當你心情不好的時候，你最常做什麼？（可複選）</div>
+        <div class="opts">
+          <div class="opt-row">
+    <input type="checkbox" name="s_when_sad" value="跟爸爸媽媽說">
+    <span>跟爸爸媽媽說</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="s_when_sad" value="跟好朋友說">
+    <span>跟好朋友說</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="s_when_sad" value="把心情寫下來或畫出來">
+    <span>把心情寫下來或畫出來</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="s_when_sad" value="玩遊戲或看影片">
+    <span>玩遊戲或看影片</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="s_when_sad" value="自己安靜一下">
+    <span>自己安靜一下</span>
+  </div>
+          <div class="opt-row">
+    <input type="checkbox" name="s_when_sad" value="什麼都不做">
+    <span>什麼都不做</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">2. 你覺得用哪一種方式，最容易說出自己的心情？</div>
+        <div class="opts">
+          <div class="opt-row">
+    <input type="radio" name="s_express_way" value="點選表情符號或圖卡 😊😢😡">
+    <span>點選表情符號或圖卡 😊😢😡</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_express_way" value="打字寫下來">
+    <span>打字寫下來</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_express_way" value="用說的（語音）">
+    <span>用說的（語音）</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_express_way" value="選一個顏色代表今天的心情">
+    <span>選一個顏色代表今天的心情</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_express_way" value="在圖上圈出來或塗色">
+    <span>在圖上圈出來或塗色</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">3. 如果每天完成「情緒打卡」可以得到一個小徽章，你會想收集嗎？</div>
+        <div class="opts">
+          <div class="opt-row">
+    <input type="radio" name="s_badge" value="超想！我會每天來">
+    <span>超想！我會每天來</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_badge" value="有點想，看看再說">
+    <span>有點想，看看再說</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_badge" value="不太在乎徽章">
+    <span>不太在乎徽章</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_badge" value="如果有別的獎勵我才會來">
+    <span>如果有別的獎勵我才會來</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">4. 如果有一個 AI 好朋友可以陪你聊心情，你希望牠是什麼樣子？</div>
+        <div class="opts">
+          <div class="opt-row">
+    <input type="radio" name="s_ai_look" value="可愛的動物角色（貓、兔子、狗）">
+    <span>可愛的動物角色（貓、兔子、狗）</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_look" value="卡通小精靈或魔法生物">
+    <span>卡通小精靈或魔法生物</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_look" value="跟我年紀差不多的卡通人物">
+    <span>跟我年紀差不多的卡通人物</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_look" value="像大哥哥 / 大姐姐的角色">
+    <span>像大哥哥 / 大姐姐的角色</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_look" value="不需要角色，純文字聊天就好">
+    <span>不需要角色，純文字聊天就好</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">5. 你希望這個 AI 朋友怎麼回應你說的心情？</div>
+        <div class="opts">
+          <div class="opt-row">
+    <input type="radio" name="s_ai_reply" value="像朋友一樣輕鬆聊天">
+    <span>像朋友一樣輕鬆聊天</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_reply" value="先說「我懂你的感受」">
+    <span>先說「我懂你的感受」</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_reply" value="直接告訴我該怎麼做">
+    <span>直接告訴我該怎麼做</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_reply" value="多問我一些問題，讓我多說一點">
+    <span>多問我一些問題，讓我多說一點</span>
+  </div>
+          <div class="opt-row">
+    <input type="radio" name="s_ai_reply" value="說個故事或笑話讓我開心">
+    <span>說個故事或笑話讓我開心</span>
+  </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">6. 如果你可以設計這個 AI 朋友，你最希望它可以做什麼？（用一句話告訴我們）</div>
+        <textarea name="s_ai_wish"></textarea>
+      </div>
+
+      <div class="preview-note">📌 此區塊為設計預覽版本，正式 Google 表單目前尚未建立「學生」分支，因此送出時不會一併帶入這 6 題答案。若確定要正式收集學生問卷，建議另外用課堂口頭訪談或選圖卡方式進行。</div>
+    </div>
+  </section>
+
+  <button id="submit-btn" class="submit-btn" style="display:none;">前往 Google 表單完成送出 →</button>
+  <p class="foot-note" id="foot-note" style="display:none;">點擊後將開啟 Google 表單並自動帶入您填寫的內容，請在該頁面確認後按「提交」完成送出。</p>
+</div>
+
+<script>
+(function(){
+  const FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLScRODL9IVJkxUxGLlgvuuv-gDUix9BoI3YZnXPe-hnxbtmczA/viewform";
+
+  document.querySelectorAll('.id-option').forEach(function(el){
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.id-option').forEach(o=>o.classList.remove('active'));
+      el.classList.add('active');
+      const role = el.getAttribute('data-role');
+      document.getElementById('parent-section').classList.toggle('active', role==='parent');
+      document.getElementById('teacher-section').classList.toggle('active', role==='teacher');
+      document.getElementById('student-section').classList.toggle('active', role==='student');
+      const showSubmit = (role === 'parent' || role === 'teacher');
+      document.getElementById('submit-btn').style.display = showSubmit ? 'block' : 'none';
+      document.getElementById('foot-note').style.display = showSubmit ? 'block' : 'none';
+    });
+  });
+
+  document.querySelectorAll('.opt-row').forEach(function(row){
+    row.addEventListener('click', function(e){
+      if(e.target.tagName === 'INPUT') return;
+      const input = row.querySelector('input[type=radio], input[type=checkbox]');
+      if(!input) return;
+      if(input.type === 'radio'){
+        row.parentElement.querySelectorAll('.opt-row').forEach(r=>r.classList.remove('checked'));
+        row.classList.add('checked');
+        input.checked = true;
+      } else {
+        input.checked = !input.checked;
+        row.classList.toggle('checked', input.checked);
+      }
+      const other = row.querySelector('.other-input');
+      row.parentElement.querySelectorAll('.other-input').forEach(o=>{ if(o!==other) o.classList.remove('show'); });
+      if(row.classList.contains('is-other')){
+        if(other) other.classList.toggle('show', input.checked);
+      }
+      input.dispatchEvent(new Event('change'));
+    });
+  });
+
+  document.getElementById('submit-btn').addEventListener('click', function(){
+    const linebotVals = Array.from(document.querySelectorAll('input[name="linebot_opt"]:checked')).map(function(el){
+      if(el.value === '__other__'){
+        const other = document.querySelector('.linebot-hidden').closest('.q').querySelector('.other-input');
+        return other && other.value ? other.value : '';
+      }
+      return el.value;
+    }).filter(Boolean);
+    const linebotHidden = document.querySelector('.linebot-hidden');
+    if(linebotHidden){ linebotHidden.value = linebotVals.join('、'); }
+
+    const params = new URLSearchParams();
+    params.set('usp','pp_url');
+    document.querySelectorAll('input[name^="entry."], textarea[name^="entry."]').forEach(function(el){
+      if(el.type === 'radio' || el.type === 'checkbox'){
+        if(el.checked && el.value) params.append(el.name, el.value);
+      } else if(el.value){
+        params.append(el.name, el.value);
+      }
+    });
+    window.open(FORM_BASE + '?' + params.toString(), '_blank');
+  });
+})();
+</script>
+</body>
+</html>
