@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
@@ -61,8 +60,6 @@
     padding:16px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:.15s;}
   .submit-btn:hover{background:var(--accent-dark);}
   .foot-note{text-align:center;color:var(--sub);font-size:12px;margin-top:14px;}
-  .preview-note{background:#f1f5f9;border:1px solid #cbd5e1;color:#475569;border-radius:16px;
-    padding:16px 20px;font-size:13px;margin-top:8px;}
 </style>
 </head>
 <body>
@@ -78,10 +75,11 @@
   <div class="card id-card">
     <div class="q-title">請問您的填答身分是？</div>
     <div class="id-options">
-      <div class="id-option" data-role="parent">👨‍👩‍👧 家長</div>
-      <div class="id-option" data-role="teacher">🏫 教師 / 輔導老師</div>
-      <div class="id-option" data-role="student">🧒 學生</div>
+      <div class="id-option" data-role="parent" data-value="家長">👨‍👩‍👧 家長</div>
+      <div class="id-option" data-role="teacher" data-value="教師 / 輔導老師">🏫 教師 / 輔導老師</div>
+      <div class="id-option" data-role="student" data-value="學生">🧒 學生</div>
     </div>
+    <input type="hidden" name="entry.515637422" id="role-hidden">
   </div>
 
   <section id="parent-section" class="section">
@@ -440,29 +438,29 @@
 
       <div class="q">
         <div class="q-title">1. 當你心情不好的時候，你最常做什麼？（可複選）</div>
-        <div class="opts">
+        <div class="opts" data-name="entry.1192433832" data-type="checkbox">
           <div class="opt-row">
-    <input type="checkbox" name="s_when_sad" value="跟爸爸媽媽說">
+    <input type="checkbox" name="entry.1192433832" value="跟爸爸媽媽說">
     <span>跟爸爸媽媽說</span>
   </div>
           <div class="opt-row">
-    <input type="checkbox" name="s_when_sad" value="跟好朋友說">
+    <input type="checkbox" name="entry.1192433832" value="跟好朋友說">
     <span>跟好朋友說</span>
   </div>
           <div class="opt-row">
-    <input type="checkbox" name="s_when_sad" value="把心情寫下來或畫出來">
+    <input type="checkbox" name="entry.1192433832" value="把心情寫下來或畫出來">
     <span>把心情寫下來或畫出來</span>
   </div>
           <div class="opt-row">
-    <input type="checkbox" name="s_when_sad" value="玩遊戲或看影片">
+    <input type="checkbox" name="entry.1192433832" value="玩遊戲或看影片">
     <span>玩遊戲或看影片</span>
   </div>
           <div class="opt-row">
-    <input type="checkbox" name="s_when_sad" value="自己安靜一下">
+    <input type="checkbox" name="entry.1192433832" value="自己安靜一下">
     <span>自己安靜一下</span>
   </div>
           <div class="opt-row">
-    <input type="checkbox" name="s_when_sad" value="什麼都不做">
+    <input type="checkbox" name="entry.1192433832" value="什麼都不做">
     <span>什麼都不做</span>
   </div>
         </div>
@@ -470,110 +468,96 @@
 
       <div class="q">
         <div class="q-title">2. 你覺得用哪一種方式，最容易說出自己的心情？</div>
-        <div class="opts">
+        <div class="opts" data-name="entry.137990065" data-type="radio">
           <div class="opt-row">
-    <input type="radio" name="s_express_way" value="點選表情符號或圖卡 😊😢😡">
+    <input type="radio" name="entry.137990065" value="點選表情符號或圖卡 😊😢😡">
     <span>點選表情符號或圖卡 😊😢😡</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_express_way" value="打字寫下來">
+    <input type="radio" name="entry.137990065" value="打字寫下來">
     <span>打字寫下來</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_express_way" value="用說的（語音）">
+    <input type="radio" name="entry.137990065" value="用說的（語音）">
     <span>用說的（語音）</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_express_way" value="選一個顏色代表今天的心情">
+    <input type="radio" name="entry.137990065" value="選一個顏色代表今天的心情">
     <span>選一個顏色代表今天的心情</span>
-  </div>
-          <div class="opt-row">
-    <input type="radio" name="s_express_way" value="在圖上圈出來或塗色">
-    <span>在圖上圈出來或塗色</span>
   </div>
         </div>
       </div>
 
       <div class="q">
         <div class="q-title">3. 如果每天完成「情緒打卡」可以得到一個小徽章，你會想收集嗎？</div>
-        <div class="opts">
+        <div class="opts" data-name="entry.1814940215" data-type="radio">
           <div class="opt-row">
-    <input type="radio" name="s_badge" value="超想！我會每天來">
+    <input type="radio" name="entry.1814940215" value="超想！我會每天來">
     <span>超想！我會每天來</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_badge" value="有點想，看看再說">
-    <span>有點想，看看再說</span>
+    <input type="radio" name="entry.1814940215" value="看看再說">
+    <span>看看再說</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_badge" value="不太在乎徽章">
+    <input type="radio" name="entry.1814940215" value="不太在乎徽章">
     <span>不太在乎徽章</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_badge" value="如果有別的獎勵我才會來">
-    <span>如果有別的獎勵我才會來</span>
+    <input type="radio" name="entry.1814940215" value="如果其他的獎勵我會想收集">
+    <span>如果其他的獎勵我會想收集</span>
   </div>
         </div>
       </div>
 
       <div class="q">
         <div class="q-title">4. 如果有一個 AI 好朋友可以陪你聊心情，你希望牠是什麼樣子？</div>
-        <div class="opts">
+        <div class="opts" data-name="entry.655542288" data-type="radio">
           <div class="opt-row">
-    <input type="radio" name="s_ai_look" value="可愛的動物角色（貓、兔子、狗）">
+    <input type="radio" name="entry.655542288" value="可愛的動物角色（貓、兔子、狗）">
     <span>可愛的動物角色（貓、兔子、狗）</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_ai_look" value="卡通小精靈或魔法生物">
+    <input type="radio" name="entry.655542288" value="卡通小精靈或魔法生物">
     <span>卡通小精靈或魔法生物</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_ai_look" value="跟我年紀差不多的卡通人物">
+    <input type="radio" name="entry.655542288" value="跟我年紀差不多的卡通人物">
     <span>跟我年紀差不多的卡通人物</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_ai_look" value="像大哥哥 / 大姐姐的角色">
-    <span>像大哥哥 / 大姐姐的角色</span>
-  </div>
-          <div class="opt-row">
-    <input type="radio" name="s_ai_look" value="不需要角色，純文字聊天就好">
-    <span>不需要角色，純文字聊天就好</span>
+    <input type="radio" name="entry.655542288" value="多問我一些問題，讓我多說一點">
+    <span>多問我一些問題，讓我多說一點</span>
   </div>
         </div>
       </div>
 
       <div class="q">
         <div class="q-title">5. 你希望這個 AI 朋友怎麼回應你說的心情？</div>
-        <div class="opts">
+        <div class="opts" data-name="entry.1260924300" data-type="radio">
           <div class="opt-row">
-    <input type="radio" name="s_ai_reply" value="像朋友一樣輕鬆聊天">
+    <input type="radio" name="entry.1260924300" value="像朋友一樣輕鬆聊天">
     <span>像朋友一樣輕鬆聊天</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_ai_reply" value="先說「我懂你的感受」">
-    <span>先說「我懂你的感受」</span>
-  </div>
-          <div class="opt-row">
-    <input type="radio" name="s_ai_reply" value="直接告訴我該怎麼做">
+    <input type="radio" name="entry.1260924300" value="直接告訴我該怎麼做">
     <span>直接告訴我該怎麼做</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_ai_reply" value="多問我一些問題，讓我多說一點">
-    <span>多問我一些問題，讓我多說一點</span>
+    <input type="radio" name="entry.1260924300" value="說個故事或笑話讓我開心">
+    <span>說個故事或笑話讓我開心</span>
   </div>
           <div class="opt-row">
-    <input type="radio" name="s_ai_reply" value="說個故事或笑話讓我開心">
-    <span>說個故事或笑話讓我開心</span>
+    <input type="radio" name="entry.1260924300" value="多問我一些問題，讓我多說一點">
+    <span>多問我一些問題，讓我多說一點</span>
   </div>
         </div>
       </div>
 
       <div class="q">
         <div class="q-title">6. 如果你可以設計這個 AI 朋友，你最希望它可以做什麼？（用一句話告訴我們）</div>
-        <textarea name="s_ai_wish"></textarea>
+        <textarea name="entry.1686109003"></textarea>
       </div>
-
-      <div class="preview-note">📌 此區塊為設計預覽版本，正式 Google 表單目前尚未建立「學生」分支，因此送出時不會一併帶入這 6 題答案。若確定要正式收集學生問卷，建議另外用課堂口頭訪談或選圖卡方式進行。</div>
     </div>
   </section>
 
@@ -590,12 +574,12 @@
       document.querySelectorAll('.id-option').forEach(o=>o.classList.remove('active'));
       el.classList.add('active');
       const role = el.getAttribute('data-role');
+      document.getElementById('role-hidden').value = el.getAttribute('data-value');
       document.getElementById('parent-section').classList.toggle('active', role==='parent');
       document.getElementById('teacher-section').classList.toggle('active', role==='teacher');
       document.getElementById('student-section').classList.toggle('active', role==='student');
-      const showSubmit = (role === 'parent' || role === 'teacher');
-      document.getElementById('submit-btn').style.display = showSubmit ? 'block' : 'none';
-      document.getElementById('foot-note').style.display = showSubmit ? 'block' : 'none';
+      document.getElementById('submit-btn').style.display = 'block';
+      document.getElementById('foot-note').style.display = 'block';
     });
   });
 
